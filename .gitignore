@@ -1,0 +1,16 @@
+# Neovim swap/backup/undo files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.undo
+
+# Neovim plugin directories
+pack
+site
+lazy
+plugin
+
+# System files
+.DS_Store
+Thumbs.db

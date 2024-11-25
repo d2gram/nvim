@@ -1,0 +1,202 @@
+return {
+    "savq/melange-nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+        vim.cmd([[colorscheme melange]])
+
+        -- local function get_default_fg(group)
+        --   local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+        --   return hl and hl.fg or nil  -- fg 값 반환
+        -- end
+        --
+        -- -- 사용자 정의 네임스페이스 설정
+        -- local namespace = vim.api.nvim_create_namespace("custom_theme")
+        -- local set_namespace = vim.api.nvim_set_hl_ns or vim.api.nvim__set_hl_ns
+        --
+        -- -- 하이라이팅 설정 함수
+        -- local function highlight(statement)
+        --   for group, settings in pairs(statement) do
+        --     vim.api.nvim_set_hl(namespace, group, settings)
+        --   end
+        -- end
+        --
+        -- -- Treesitter 기반 하이라이팅 그룹 커스터마이징
+        -- highlight({
+        --     ["@function"] = { fg = get_default_fg("@function"), bold = true, italic = false },
+        --     ["@function.call"] = { fg = '#ffffff', bold = true, italic = false },
+        --     ["@keyword"] = { fg =get_default_fg("@keyword"), italic = true, bold = true },
+        --     ["@keyword.conditional"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
+        --     ["@keyword.repeat"] = { fg = get_default_fg("@keyword"), italic = true, bold = true }   ,
+        --     ["@keyword.function"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
+        --     ["@keyword.import"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
+        --
+        --     ["@string"] = {fg = get_default_fg("@string"), italic = false },
+        --     ["@string.documentation"] = { fg = get_default_fg("@string.special"), italic = false},
+        --     ["@string.escape"] = { fg = "#d3d7ed", italic = false },
+        --     ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
+        --
+        --     ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true},
+        --     ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
+        --
+        --     ["@markup.strong"] = { fg = "#ffffff", bold = true },
+        --     ["@markup.italic"] = { fg = "#ffffff", italic = true },
+        --     ["@markup.heading"] = { fg = get_default_fg("@markup.heading"), bold = true },
+        -- })
+        --
+        -- -- LSP 기반 하이라이팅 그룹 커스터마이징
+        -- highlight({
+        --     ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
+        --     ["@lsp.mod.globalscope"] = { italic = false },
+        --     ["@lsp.type.parameter"] = { fg = get_default_fg("@variable"), italic = false },
+        -- })
+        --
+        -- highlight({
+        --     ["Whitespace"] = { fg = "#403a36" },
+        -- })
+        --
+        --    -- 네임스페이스 적용
+        --    set_namespace(namespace)       -- highlight('@string', { fg = '#253333',  italic = false })
+
+    end,
+}
+
+-- return {
+--     {
+--         "catppuccin/nvim",
+--         name = "catppuccin",
+--         priority = 1000,
+--         config = function()
+--             -- catppuccin 테마 설정
+--             require("catppuccin").setup({
+--                 flavour = "mocha", -- latte, frappe, macchiato, mocha
+--                 background = { -- :h background
+--                     light = "latte",
+--                     dark = "mocha",
+--                 },
+--                 transparent_background = false, -- disables setting the background color.
+--                 show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+--                 term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+--                 dim_inactive = {
+--                     enabled = false, -- dims the background color of inactive window
+--                     shade = "dark",
+--                     percentage = 0.15, -- percentage of the shade to apply to the inactive window
+--                 },
+--                 no_italic = false, -- Force no italic
+--                 no_bold = false, -- Force no bold
+--                 no_underline = false, -- Force no underline
+--                 styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+--                     comments = {}, -- Change the style of comments
+--                     conditionals = { "italic", "bold" },
+--                     loops = { "italic", "bold" },
+--                     functions = { "bold" },
+--                     keywords = { "italic", "bold" },
+--                     strings = {},
+--                     variables = {},
+--                     numbers = {},
+--                     booleans = {},
+--                     properties = {},
+--                     types = {},
+--                     operators = {},
+--                     -- miscs = {}, -- Uncomment to turn off hard-coded styles
+--                 },
+--                 color_overrides = {
+--                     all = {
+--                         text = "#eeeeee",
+--                     },
+--                     latte = {},
+--                     frappe = {},
+--                     macchiato = {},
+--                     mocha = {
+--                         base = "#222222",
+--                         mantle = "#1b1b1b",
+--                         crust = "#242424",
+--                     }
+--                 },
+--                 custom_highlights = {},
+--                 default_integrations = true,
+--                 integrations = {
+--                     cmp = true,
+--                     gitsigns = true,
+--                     nvimtree = true,
+--                     treesitter = true,
+--                     notify = false,
+--                     mini = {
+--                         enabled = true,
+--                         indentscope_color = "",
+--                     },
+--                     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+--                 },
+--             })
+--             vim.cmd.colorscheme("catppuccin")
+--         end,
+--     },
+-- }
+
+
+-- return {
+--     "EdenEast/nightfox.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require('nightfox').setup({
+--           options = {
+--             -- Compiled file's destination location
+--             compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+--             compile_file_suffix = "_compiled", -- Compiled file suffix
+--             transparent = false,     -- Disable setting background
+--             terminal_colors = true,  -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+--             dim_inactive = false,    -- Non focused panes set to alternative background
+--             module_default = true,   -- Default enable value for modules
+--             colorblind = {
+--               enable = false,        -- Enable colorblind support
+--               simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+--               severity = {
+--                 protan = 0,          -- Severity [0,1] for protan (red)
+--                 deutan = 0,          -- Severity [0,1] for deutan (green)
+--                 tritan = 0,          -- Severity [0,1] for tritan (blue)
+--               },
+--             },
+--             styles = {               -- Style to be applied to different syntax groups
+--               comments = "NONE",     -- Value is any valid attr-list value `:help attr-list`
+--               conditionals = "bold,italic",
+--               constants = "NONE",
+--               functions = "bold",
+--               keywords = "bold,italic",
+--               numbers = "NONE",
+--               operators = "NONE",
+--               strings = "NONE",
+--               types = "NONE",
+--               variables = "NONE",
+--             },
+--             inverse = {             -- Inverse highlight for different types
+--               match_paren = false,
+--               visual = false,
+--               search = false,
+--             },
+--             modules = {             -- List of various plugins and additional options
+--               -- ...
+--             },
+--           },
+--           palettes = {},
+--           specs = {},
+--           groups = {},
+--         })
+--         
+--         -- setup must be called before loading
+--         vim.cmd("colorscheme carbonfox")
+--     end,
+-- }
+
+-- return {
+--     'xero/miasma.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         vim.cmd('colorscheme miasma')
+--     end,
+-- }
+
