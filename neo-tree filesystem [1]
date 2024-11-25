@@ -1,0 +1,8 @@
+  ~/.config/nvim
+    .git
+    img
+    lua
+    .gitignore
+    README.md
+    init.lua
+    lazy-lock.json

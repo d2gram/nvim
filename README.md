@@ -37,6 +37,7 @@
 - **Alt + o** Make row below.
 - **Alt + j** Exchange row to upper.
 - **Alt + k** Exchange row to lower.
+
 **barbar.nvim**
 - **Alt + ,** Right buffer.
 - **Alt + .** Left buffer.
@@ -45,15 +46,19 @@
 - **Alt + d** Close current buffer.
 - **Alt + D** Close w/o current buffer.
 - **Alt + p** Pin current buffer.
+
 **vsplit**
 - **Alt + s** Vsplit buffers.
 - **Alt + S** Exchange vsplitted buffers.
+
 **files**
 - **Alt + w** Write.
 - **Alt + q** Quit.
+
 **Telescope.nvim**
 - **Alt + f** Fuzzy-find files.
 - **Alt + g** Live-grep files. 
+
 **CTRL**
 - **Ctrl + h/j/k/l** Pane movement.
 
@@ -61,6 +66,7 @@
 **row operation**
 - **Alt + O** Make row above.
 - **Alt + o** Make row below.
+
 **movement**
 - **Ctrl + h/j/k/l** hjkl movement.
 
