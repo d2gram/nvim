@@ -1,6 +1,6 @@
 # Neovim Configuration of D2GRAM
 
-![](./img/스크린샷%202024-11-27%20001121.png)
+![](./img/스크린샷%202024-11-27%20002329.png)
 
 ## Plugins
 
