@@ -85,7 +85,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         -- 기타 하이라이트 설정
         highlight({
             ["Whitespace"] = { fg = "#403a36" },
-            ["CursorLine"] = { bg = "#272320"}
+            ["CursorLine"] = { bg = "#272320"},
         })
     end,
 })
