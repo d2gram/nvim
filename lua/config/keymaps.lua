@@ -33,13 +33,14 @@ mapKey('<leader>t',[[:lua require("utils.toggleTerminal").ToggleTerminal()<CR>]]
 
 
 -- toggle line wrapping mode (soft <-> hard)
-mapKey('<leader>w', [[:ToggleWrapMode<CR>]])
+mapKey('<leader>w', [[:ToggleWrapMode<CR>:nohlsearch<CR>]])
 
 -- Clear all inappropriate carriage return
 mapKey('<leader>M', [[:%s/\r//g<CR>]])
 -- Clear all inappropriate indent
 mapKey('<leader>I', 'ggVG=')
-
+-- Clear all trailing space
+mapKey('<leader>T', [[:%s/\s\+$//e<CR>:nohlsearch<CR>]])
 
 ------------ ALT -------------
 -- Newline while not enter the insert mode
