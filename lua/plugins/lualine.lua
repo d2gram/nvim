@@ -2,7 +2,6 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-        local navic = require('nvim-navic')
         require("lualine").setup({
             options = {
                 theme = "powerline_dark"
@@ -16,6 +15,15 @@ return {
             --         cond = function()
             --             return navic.is_available()
             --         end,
+            --     },
+            -- },
+            -- sections = {
+            --     lualine_c = {
+            --         {
+            --             "navic",
+            --             color_correction = "dynamic",
+            --             navic_options = nil,
+            --         },
             --     },
             -- },
         })

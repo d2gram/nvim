@@ -76,8 +76,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@markup.heading.2"] = { fg = "#e49b5d", bold = true },
             ["@markup.heading.3"] = { fg = "#ebc06d", bold = true },
             ["@markup.heading.4"] = { fg = "#85b695", bold = true },
-            ["@markup.heading.5"] = { fg = "#85b695", bold = false },
-            ["@markup.heading.6"] = { fg = "#78997a", bold = false },
+            ["@markup.heading.5"] = { fg = "#78997a", bold = false },
+            ["@markup.heading.6"] = { fg = "#a3a9ce", bold = false },
         })
 
         -- LSP 기반 하이라이팅 그룹 커스터마이징
@@ -98,7 +98,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             -- ["RenderMarkdownH5Bg"] = { bg = "#5d4e30" },
             -- ["RenderMarkdownH6Bg"] = { bg = "#5d4e30" },
 
-            ["RenderMarkdownH1Bg"] = { bg = "#292522", underline = true},
+            ["RenderMarkdownH1Bg"] = { bg = "#292522", underline = true, sp = "#d47766" },
+            ["RenderMarkdownH2Bg"] = { bg = "#292522", underline = true, sp = "#e49b5d" },
+            ["RenderMarkdownH3Bg"] = { bg = "#292522", underline = true, sp = "#ebc06d" },
+            ["RenderMarkdownH4Bg"] = { bg = "#292522", underline = true, sp = "#85b695" },
+            ["RenderMarkdownH5Bg"] = { bg = "#292522", underline = true, sp = "#78997a" },
+            ["RenderMarkdownH6Bg"] = { bg = "#292522", underline = true, sp = "#a3a9ce" },
             ["RenderMarkdownUnchecked"] = { fg = "#ffffff" },
             ["RenderMarkdownChecked"] = { fg = "#ffffff" },
         })

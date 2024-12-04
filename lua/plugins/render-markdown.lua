@@ -12,14 +12,6 @@ return{
             min_width = 50,
             left_pad = 0,
             right_pad = 10,
-            backgrounds = {
-                'RenderMarkdownH1Bg',
-                -- 'RenderMarkdownH1Bg',
-                -- 'RenderMarkdownH1Bg',
-                -- 'RenderMarkdownH1Bg',
-                -- 'RenderMarkdownH1Bg',
-                -- 'RenderMarkdownH1Bg',
-            }
             -- border = true,
             -- border_virtual = true,
         },
