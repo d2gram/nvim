@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd("FileType", { 
+vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown", "text" },  -- .md와 .txt 파일 형식에 적용
     callback = function()
         -- Soft wrapping 활성화
@@ -72,7 +72,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
             ["@markup.strong"] = { fg = "#ffffff", bold = true },
             ["@markup.italic"] = { fg = "#ffffff", italic = true },
-            ["@markup.heading"] = { fg = get_default_fg("@markup.heading"), bold = true },
+            ["@markup.heading.1"] = { fg = "#d47766", bold = true },
+            ["@markup.heading.2"] = { fg = "#e49b5d", bold = true },
+            ["@markup.heading.3"] = { fg = "#ebc06d", bold = true },
+            ["@markup.heading.4"] = { fg = "#85b695", bold = true },
+            ["@markup.heading.5"] = { fg = "#85b695", bold = false },
+            ["@markup.heading.6"] = { fg = "#78997a", bold = false },
         })
 
         -- LSP 기반 하이라이팅 그룹 커스터마이징
@@ -86,6 +91,16 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         highlight({
             ["Whitespace"] = { fg = "#403a36" },
             ["CursorLine"] = { bg = "#272320"},
+            -- ["RenderMarkdownH1Bg"] = { bg = "#4e191b" },
+            -- ["RenderMarkdownH2Bg"] = { bg = "#573524" },
+            -- ["RenderMarkdownH3Bg"] = { bg = "#5d4e30" },
+            -- ["RenderMarkdownH4Bg"] = { bg = "#5d4e30" },
+            -- ["RenderMarkdownH5Bg"] = { bg = "#5d4e30" },
+            -- ["RenderMarkdownH6Bg"] = { bg = "#5d4e30" },
+
+            ["RenderMarkdownH1Bg"] = { bg = "#292522", underline = true},
+            ["RenderMarkdownUnchecked"] = { fg = "#ffffff" },
+            ["RenderMarkdownChecked"] = { fg = "#ffffff" },
         })
     end,
 })
