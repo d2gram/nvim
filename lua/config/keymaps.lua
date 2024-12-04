@@ -15,6 +15,10 @@ mapKey('<C-l>', '<C-w>l')
 
 
 -------- LEADER KEYMAPPING --------
+-- Calendar
+local toggleCalendar = require("utils.toggleCalendar")
+mapKey('<leader>s', [[:lua require("utils.toggleCalendar").ToggleCalendar()<CR>]])
+
 -- Neotree
 mapKey('<leader>e', ':Neotree toggle<cr>')
 
