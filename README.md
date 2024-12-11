@@ -9,10 +9,10 @@
 - barbar.lua (tabline)
 - colorscheme.lua (savq/melange-nvim)
 - comment.lua
+- dropbar.nvim
 - indent-blankline
 - Mason & Lsp
 - lualine
-- lush
 - neo-tree
 - neotab (tabout)
 - noice
@@ -20,6 +20,8 @@
 - nvim-colorizer
 - nvim-scrollbar
 - nvim-surround
+- render-markdown
+- telekasten
 - telescope
 - wrapping
 

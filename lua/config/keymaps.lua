@@ -15,9 +15,6 @@ mapKey('<C-l>', '<C-w>l')
 
 
 -------- LEADER KEYMAPPING --------
--- Calendar
-local toggleCalendar = require("utils.toggleCalendar")
-mapKey('<leader>s', [[:lua require("utils.toggleCalendar").ToggleCalendar()<CR>]])
 
 -- Neotree
 mapKey('<leader>e', ':Neotree toggle<cr>')
@@ -26,14 +23,20 @@ mapKey('<leader>e', ':Neotree toggle<cr>')
 mapKey('<leader>h', ':nohlsearch<CR>')
 
 -- terminal
-local toggleTerminal = require("utils.toggleTerminal")
-mapKey('<leader>t',[[:lua require("utils.toggleTerminal").ToggleTerminal()<CR>]])
+-- DEPRECATED 
+-- local toggleTerminal = require("utils.toggleTerminal")
+-- mapKey('<leader>t',[[:lua require("utils.toggleTerminal").ToggleTerminal()<CR>]])
+mapKey('<leader>t', [[:ToggleTerm direction=horizontal size=15<CR>]])
+mapKey('<leader>y', [[:ToggleTerm direction=vertical size=60<CR>]])
 
 -- delete all buffer except Neotree
 -- local closeAll = require("utils.closeAll")
 -- mapKey('<leader>bd', [[:lua require("utils.closeAll").closeAll()<CR>]])
 
 -- DEPRECATED because of using barbar.nvim
+
+local toggleCheckbox = require("utils.toggleCheckbox")
+mapKey('<leader>x', [[:lua require("utils.toggleCheckbox").ToggleCheckbox()<CR>]])
 
 
 -- toggle line wrapping mode (soft <-> hard)

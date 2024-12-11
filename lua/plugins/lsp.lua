@@ -65,23 +65,22 @@ return {
                 -- on_attach = function(client, bufnr)
                 --     navic.attach(client, bufnr)
                 -- end,
-                on_attach = function(client, bufnr)
-                    -- `nvim-navic`을 LSP에 연결
-                    if client.server_capabilities.documentSymbolProvider then
-                        require('nvim-navic').attach(client, bufnr)
-                    end
-                end,
-            })
-            lspconfig.omnisharp.setup({
-                -- on_attach = function(client, bufnr)
-                --     navic.attach(client, bufnr)
-                -- end,
                 -- on_attach = function(client, bufnr)
                 --     -- `nvim-navic`을 LSP에 연결
                 --     if client.server_capabilities.documentSymbolProvider then
                 --         require('nvim-navic').attach(client, bufnr)
                 --     end
                 -- end,
+            })
+            lspconfig.omnisharp.setup({
+                on_attach = function(client, bufnr)
+                    client.server_capabilities.documentFormattingProvider = true
+                end,
+                settings = {
+                    formattingOptions = {
+                        Bracestyle = "Allman",
+                    }
+                }
             })
             lspconfig.pyright.setup({
                 -- on_attach = function(client, bufnr)

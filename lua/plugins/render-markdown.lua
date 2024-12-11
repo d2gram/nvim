@@ -7,7 +7,7 @@ return{
         heading = {
             icons = { '󰎤 ', '󰎧 ', '󰎪 ', '󰎭 ', '󰎱 ', '󰎳 ' },
             sign = false,
-            position = 'inline',
+            -- position = 'inline',
             width = 'block',
             min_width = 50,
             left_pad = 0,
@@ -22,7 +22,14 @@ return{
         checkbox = {
             enabled = true,
             unchecked = { icon = "" },
-            checked = { icon = "" },
-        }
+            checked = {
+                icon = "",
+                scope_highlight = "@markup.strikethrough",
+            },
+        },
+        -- indent = {
+        --     enabled = true,
+        --     per_level = 2,
+        -- }
     },
 }
