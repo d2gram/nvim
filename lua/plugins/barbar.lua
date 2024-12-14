@@ -12,7 +12,7 @@ return {
         no_name_title = "Empty",
         icons = {
             -- separator = {left = "", right = ""},
-            separator_at_end = true,
+            separator_at_end = false,
             -- preset = 'slanted',
             -- buffer_number = true,
             -- modified = {button = '󰙏'}
