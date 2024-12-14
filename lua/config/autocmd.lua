@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd("Colorscheme", {
         vim.api.nvim_set_hl(0, 'BufferVisibleSign', { bg = "#292522", fg = "#34302c" })
 
         vim.api.nvim_set_hl(0, 'BufferTabpages', { bg = "#34302c", fg = "#34302c",})
+        vim.api.nvim_set_hl(0, 'BufferTabpageFill', { bg = "#1c1c1c", fg = "#1c1c1c",})
 
         -- vim.api.nvim_set_hl(0, 'NeoTreeModified', { fg = "#bd8183" })
         vim.api.nvim_set_hl(0, 'NeoTreeFileNameModified', { fg = "#ece1d7", bold = true })

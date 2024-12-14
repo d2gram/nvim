@@ -12,13 +12,15 @@ return {
         no_name_title = "Empty",
         icons = {
             -- separator = {left = "", right = ""},
-            separator_at_end = false,
+            separator_at_end = true,
             -- preset = 'slanted',
             -- buffer_number = true,
             -- modified = {button = '󰙏'}
             modified = {button = '󱓻'}
         },
         tabpages = true,
+        maximum_padding = 1,
+        minimum_padding = 1,
     },
 }
 
