@@ -49,6 +49,12 @@ mapKey('<leader>I', 'ggVG=')
 -- Clear all trailing space
 mapKey('<leader>T', [[:%s/\s\+$//e<CR>:nohlsearch<CR>]])
 
+
+-- dismiss noice popup
+mapKey('<leader>[', function()
+    require('notify').dismiss({ silent = true, enter = false, })
+end)
+
 ------------ ALT -------------
 -- Newline while not enter the insert mode
 mapKey('<A-o>', 'o<ESC>')
