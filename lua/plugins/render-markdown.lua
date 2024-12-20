@@ -17,7 +17,8 @@ return{
         },
         render_modes = true,
         bullet = {
-            icons = { '', '', '', '' },
+            -- icons = { '', '', '', '' },
+            icons = { '' },
         },
         checkbox = {
             enabled = true,

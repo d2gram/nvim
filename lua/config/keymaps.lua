@@ -65,17 +65,17 @@ mapKey('<A-j>', [[:m .+1<CR>==]])
 mapKey('<A-k>', [[:m .-2<CR>==]])
 
 -- Tab operation
-mapKey('<A-,>', [[:BufferPrevious<CR>]])
-mapKey('<A-.>', [[:BufferNext<CR>]])
-mapKey('<A-<>', [[:BufferMovePrevious<CR>]])
-mapKey('<A->>', [[:BufferMoveNext<CR>]])
+mapKey('<A-a>', [[:BufferPrevious<CR>]])
+mapKey('<A-d>', [[:BufferNext<CR>]])
+mapKey('<A-S-a>', [[:BufferMovePrevious<CR>]])
+mapKey('<A-S-d>', [[:BufferMoveNext<CR>]])
 -- mapKey('<A-h>', [[:BufferPrevious<CR>]])
 -- mapKey('<A-l>', [[:BufferNext<CR>]])
 -- mapKey('<A-H>', [[:BufferMovePrevious<CR>]])
 -- mapKey('<A-L>', [[:BufferMoveNext<CR>]])
 
-mapKey('<A-D>', [[:BufferCloseAllButCurrentOrPinned<CR>]])
-mapKey('<A-d>', [[:BufferClose<CR>]])
+mapKey('<A-X>', [[:BufferCloseAllButCurrentOrPinned<CR>]])
+mapKey('<A-x>', [[:BufferClose<CR>]])
 mapKey('<A-p>', [[:BufferPin<CR>]])
 
 -- File modification
