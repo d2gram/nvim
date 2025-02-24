@@ -72,9 +72,12 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
             -- ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true },
             ["@type.builtin"] = { fg = "#ebc06d", bold = true },
+
             ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
+            ["@punctuation.bracket"] = { fg = get_default_fg("@variable"), bold = false },
+
             ["@markup.strong"] = { fg = "#ffffff", bold = true },
-            ["@markup.italic"] = { fg = "#ffffff", italic = true },
+            ["@markup.italic"] = { fg = "#ffffff", italic = true, bold = false},
             ["@markup.heading.1"] = { fg = "#d47766", bold = true , underline = true, sp = "#d47766" },
             ["@markup.heading.2"] = { fg = "#e49b5d", bold = true , underline = true, sp = "#e49b5d" },
             ["@markup.heading.3"] = { fg = "#ebc06d", bold = true , underline = true, sp = "#ebc06d" },

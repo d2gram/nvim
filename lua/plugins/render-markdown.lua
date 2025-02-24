@@ -17,20 +17,19 @@ return{
         },
         render_modes = true,
         bullet = {
-            -- icons = { '', '', '', '' },
+            icons = { '', '', '', '' },
             icons = { '' },
         },
         checkbox = {
-            enabled = true,
             unchecked = { icon = "" },
             checked = {
                 icon = "",
                 scope_highlight = "@markup.strikethrough",
             },
         },
-        -- indent = {
-        --     enabled = true,
-        --     per_level = 2,
-        -- }
+        indent = {
+            enabled = false,
+            per_level = 2,
+        }
     },
 }
