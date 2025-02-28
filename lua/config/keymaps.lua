@@ -61,8 +61,8 @@ mapKey('<A-o>', 'o<ESC>')
 mapKey('<A-O>', 'O<Esc>')
 
 -- Row exchange
-mapKey('<A-j>', [[:m .+1<CR>==]])
-mapKey('<A-k>', [[:m .-2<CR>==]])
+-- mapKey('<A-S-j>', [[:m .+1<CR>==]])
+-- mapKey('<A-S-k>', [[:m .-2<CR>==]])
 
 -- Tab operation
 mapKey('<A-a>', [[:BufferPrevious<CR>]])
