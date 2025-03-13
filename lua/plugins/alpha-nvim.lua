@@ -1,92 +1,130 @@
 return {
+  {
     "goolord/alpha-nvim",
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-        "nvim-lua/plenary.nvim",
-    },
+    event = "VimEnter",
+    enabled = true,
     config = function()
-        local dashboard = require("alpha.themes.dashboard")
+      local dashboard_theme = require "alpha.themes.dashboard"
 
-        -- helper function for utf8 chars
-        local function getCharLen(s, pos)
-            local byte = string.byte(s, pos)
-            if not byte then
-                return nil
-            end
-            return (byte < 0x80 and 1) or (byte < 0xE0 and 2) or (byte < 0xF0 and 3) or (byte < 0xF8 and 4) or 1
-        end
+      -- Header Section
+      local logo = [[
+ ██████   █████              ███                 
+░░██████ ░░███              ░░░                TM
+ ░███░███ ░███  █████ █████ ████  █████████████  
+ ░███░░███░███ ░░███ ░░███ ░░███ ░░███░░███░░███ 
+ ░███ ░░██████  ░███  ░███  ░███  ░███ ░███ ░███ 
+ ░███  ░░█████  ░░███ ███   ░███  ░███ ░███ ░███ 
+ █████  ░░█████  ░░█████    █████ █████░███ █████
+░░░░░    ░░░░░    ░░░░░    ░░░░░ ░░░░░ ░░░ ░░░░░ 
 
-        local function applyColors(logo, colors, logoColors)
-            dashboard.section.header.val = logo
+  ]]
 
-            for key, color in pairs(colors) do
-                local name = "Alpha" .. key
-                vim.api.nvim_set_hl(0, name, color)
-                colors[key] = name
-            end
+      dashboard_theme.section.header.val = vim.split(logo, "\n")
+      dashboard_theme.section.header.opts.hl = "AlphaHeaderGreen"
+      vim.api.nvim_set_hl(0, "AlphaHeaderGreen", { fg = "#e49b5d", bold = true })
 
-            dashboard.section.header.opts.hl = {}
-            for i, line in ipairs(logoColors) do
-                local highlights = {}
-                local pos = 0
+      -- Buttons Section
+      dashboard_theme.section.buttons.val = {
+        dashboard_theme.button("Alt + f", " Find file", "<cmd>Telescope find_files <CR>"),
+        dashboard_theme.button("Alt + e", " Find text", "<cmd>Telescope live_grep <CR>"),
+        dashboard_theme.button("Space e", " Neotree Toggle", "<cmd>Telescope project <CR>"),
+        dashboard_theme.button("Space o", " Recent files", "<cmd>Telescope oldfiles <CR>"),
+        dashboard_theme.button(
+          "Space O",
+          " Load Last Session",
+          "<cmd>lua require('persistence').load({ last = true }) <CR>"
+        ),
+        -- dashboard_theme.button("n", " New file", "<cmd>ene <BAR> startinsert <CR>"),
+        -- dashboard_theme.button("<leader> qq", " Close", "<cmd>q <CR>"),
+        -- -- Config nvim (cd to nvim C:\Users\Donato\AppData\Local\nvim) and open init.lua)
+        -- dashboard_theme.button(
+        --   "<leader> cn",
+        --   " Config",
+        --   "<cmd>edit $MYVIMRC <CR> <cmd>cd " .. vim.fn.stdpath "config" .. " <CR>"
+        -- ),
+      }
+      dashboard_theme.section.buttons.opts.hl = "AlphaButtons"
 
-                for j = 1, #line do
-                    local opos = pos
-                    pos = pos + getCharLen(logo[i], opos + 1)
+      -- Layout
+      dashboard_theme.opts.layout = {
+        { type = "padding", val = 4 }, -- Upper margin
+        dashboard_theme.section.header,
+        { type = "padding", val = 2 }, -- Space between logo and buttons
+        dashboard_theme.section.buttons,
+        { type = "padding", val = 1 }, -- Space between buttons and recent files
+        dashboard_theme.section.footer,
+      }
 
-                    local color_name = colors[line:sub(j, j)]
-                    if color_name then
+      -- Lazy Loading
+      if vim.o.filetype == "lazy" then
+        vim.cmd.close()
+        vim.api.nvim_create_autocmd("User", {
+          once = true,
+          pattern = "AlphaReady",
+          callback = function()
+            require("lazy").show()
+          end,
+        })
+      end
 
-                        table.insert(highlights, { color_name, opos, pos })
-                    end
-                end
+      -- Set the dashbaord
+      require("alpha").setup(dashboard_theme.opts)
 
-                table.insert(dashboard.section.header.opts.hl, highlights)
+      -- Draw Footer After Startup
+      vim.api.nvim_create_autocmd("User", {
+        once = true,
+        pattern = "LazyVimStarted",
+        callback = function()
+          local stats = require("lazy").stats()
+          local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
 
-            end
-            return dashboard.opts
-        end
-
-        require("alpha").setup(applyColors({
-            [[  ███       ███  ]],
-            [[  ████      ████ ]],
-            [[  ████     █████ ]],
-            [[ █ ████    █████ ]],
-            [[ ██ ████   █████ ]],
-            [[ ███ ████  █████ ]],
-            [[ ████ ████ ████ ]],
-            [[ █████  ████████ ]],
-            [[ █████   ███████ ]],
-            [[ █████    ██████ ]],
-            [[ █████     █████ ]],
-            [[ ████      ████ ]],
-            [[  ███       ███  ]],
-            [[                    ]],
-            [[  N  E  O  V  I  M  ]],
-        }, {
-                ["b"] = { fg = "#3399ff", ctermfg = 33 },
-                ["a"] = { fg = "#53C670", ctermfg = 35 },
-                ["g"] = { fg = "#39ac56", ctermfg = 29 },
-                ["h"] = { fg = "#33994d", ctermfg = 23},
-                ["i"] = { fg = "#33994d", bg = "#39ac56", ctermfg = 23, ctermbg = 29},
-                ["j"] = { fg = "#53C670", bg = "#33994d", ctermfg = 35, ctermbg = 23 },
-                ["k"] = { fg = "#30A572", ctermfg = 36},
-            }, {
-                [[  kkkka       gggg  ]],
-                [[  kkkkaa      ggggg ]],
-                [[ b kkkaaa     ggggg ]],
-                [[ bb kkaaaa    ggggg ]],
-                [[ bbb kaaaaa   ggggg ]],
-                [[ bbbb aaaaaa  ggggg ]],
-                [[ bbbbb aaaaaa igggg ]],
-                [[ bbbbb  aaaaaahiggg ]],
-                [[ bbbbb   aaaaajhigg ]],
-                [[ bbbbb    aaaaajhig ]],
-                [[ bbbbb     aaaaajhi ]],
-                [[ bbbbb      aaaaajh ]],
-                [[  bbbb       aaaaa  ]],
-                [[                    ]],
-                [[  a  a  a  b  b  b  ]],
-            }))
+          -- Footer
+          dashboard_theme.section.footer.val = "⚡ Neovim loaded "
+            .. stats.loaded
+            .. "/"
+            .. stats.count
+            .. " plugins in "
+            .. ms
+            .. "ms"
+          pcall(vim.cmd.AlphaRedraw)
+          dashboard_theme.section.footer.opts.hl = "AlphaFooter"
+        end,
+      })
     end,
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = {},
+    keys = {
+      {
+        "<leader>qs",
+        function()
+          require("persistence").load()
+        end,
+        desc = "Session Restore Session",
+      },
+      {
+        "<leader>qS",
+        function()
+          require("persistence").select()
+        end,
+        desc = "Session Select Session",
+      },
+      {
+        "<leader>ql",
+        function()
+          require("persistence").load { last = true }
+        end,
+        desc = "Session Restore Last Session",
+      },
+      {
+        "<leader>qd",
+        function()
+          require("persistence").stop()
+        end,
+        desc = "Session Don't Save Current Session",
+      },
+    },
+  },
 }

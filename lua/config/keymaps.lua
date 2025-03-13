@@ -38,6 +38,9 @@ mapKey('<leader>y', [[:ToggleTerm direction=vertical size=60<CR>]])
 local toggleCheckbox = require("utils.toggleCheckbox")
 mapKey('<leader>x', [[:lua require("utils.toggleCheckbox").ToggleCheckbox()<CR>]])
 
+mapKey('<leader>O', [[:lua require('persistence').load({last = true}) <CR>]])
+          --"<cmd>lua require('persistence').load({ last = true }) <CR>"
+
 
 -- toggle line wrapping mode (soft <-> hard)
 mapKey('<leader>w', [[:ToggleWrapMode<CR>:nohlsearch<CR>]])
