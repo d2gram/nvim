@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@lsp.type.method"] = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.mod.declaration"] = { fg = "#ffffff", italic = false },
             ["@lsp.mod.definition"] = { fg = "#ffffff", italic = false },
-            ["@lsp.type.namespace.cpp"] = { fg = "#a3f9ce", italic = false },
+            ["@lsp.type.namespace.cpp"] = { fg = "#85b695", italic = false },
         })
 
         -- 기타 하이라이트 설정
