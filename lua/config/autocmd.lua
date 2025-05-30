@@ -69,12 +69,16 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@string"] = { fg = get_default_fg("@string"), italic = false },
             ["@string.documentation"] = { fg = get_default_fg("@string.special"), italic = false },
             ["@string.escape"] = { fg = "#d3d7ed", italic = false },
+            ["@character"] = { fg = get_default_fg("@keyword.directive"), italic = false },
             ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
             -- ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true },
             ["@type.builtin"] = { fg = "#ebc06d", bold = true },
+
             ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
+            ["@punctuation.bracket"] = { fg = get_default_fg("@variable"), bold = false },
+
             ["@markup.strong"] = { fg = "#ffffff", bold = true },
-            ["@markup.italic"] = { fg = "#ffffff", italic = true },
+            ["@markup.italic"] = { fg = "#ffffff", italic = true, bold = false},
             ["@markup.heading.1"] = { fg = "#d47766", bold = true , underline = true, sp = "#d47766" },
             ["@markup.heading.2"] = { fg = "#e49b5d", bold = true , underline = true, sp = "#e49b5d" },
             ["@markup.heading.3"] = { fg = "#ebc06d", bold = true , underline = true, sp = "#ebc06d" },
@@ -92,6 +96,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@lsp.type.method"] = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.mod.declaration"] = { fg = "#ffffff", italic = false },
             ["@lsp.mod.definition"] = { fg = "#ffffff", italic = false },
+            ["@lsp.type.namespace.cpp"] = { fg = "#ffffff", italic = false, bold = true },
         })
 
         -- 기타 하이라이트 설정
