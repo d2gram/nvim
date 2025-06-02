@@ -90,7 +90,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         -- LSP 기반 하이라이팅 그룹 커스터마이징
         highlight({
             -- ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
-            ["@lsp.type.class"] = { fg = "#d3d7ed", bold = true },
+            ["@lsp.type.class"] = { fg = "#d47766", bold = true },
             ["@lsp.mod.globalscope"] = { italic = false },
             ["@lsp.type.parameter"] = { fg = get_default_fg("@variable"), italic = false, underline = true },
             ["@lsp.type.function"] = { fg = get_default_fg("@variable"), italic = false },
