@@ -63,8 +63,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@function"]               = { fg = '#ffffff', bold = true, italic = false },
             ["@function.call"]          = { fg = get_default_fg("@variable"), bold = true, italic = false },
             ["@keyword"]                = { fg = get_default_fg("@keyword"), bold = true, italic = false },
-            ["@keyword.conditional"]    = { fg = get_default_fg("@keyword"), italic = true, bold = true },
-            ["@keyword.repeat"]         = { fg = get_default_fg("@keyword"), bold = true, italic = true, },
+            ["@keyword.conditional"]    = { fg = get_default_fg("@keyword"), bold = true, italic = false,  },
+            ["@keyword.repeat"]         = { fg = get_default_fg("@keyword"), bold = true, italic = false, },
             ["@keyword.function"]       = { fg = get_default_fg("@keyword.function"), bold = true, italic = true, },
             ["@keyword.import"]         = { fg = get_default_fg("@keyword.function"), bold = true, italic = true, },
             ["@string"]                 = { fg = get_default_fg("@string"), italic = false },
@@ -91,9 +91,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         -- LSP 기반 하이라이팅 그룹 커스터마이징
         highlight({
             -- ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
-            ["@lsp.type.class"]         = { fg = "#d47766", bold = true },
+            ["@lsp.type.class"]         = { fg = "#85b695", bold = true },
             ["@lsp.mod.globalscope"]    = { italic = false },
-            ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
+            -- ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
+            ["@lsp.type.parameter"]     = { fg = "#cec3b9", italic = false },
             ["@lsp.type.function"]      = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.type.method"]        = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.mod.declaration"]    = { fg = "#ffffff", italic = false },
