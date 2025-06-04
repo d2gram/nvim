@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@lsp.type.class"]         = { fg = "#85b695", bold = true },
             ["@lsp.mod.globalscope"]    = { italic = false },
             -- ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
-            ["@lsp.type.parameter"]     = { fg = "#cec3b9", italic = false },
+            ["@lsp.type.parameter"]     = { fg = "#baafa5", italic = false },
             ["@lsp.type.function"]      = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.type.method"]        = { fg = get_default_fg("@variable"), italic = false },
             ["@lsp.mod.declaration"]    = { fg = "#ffffff", italic = false },
