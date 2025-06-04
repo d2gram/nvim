@@ -15,8 +15,8 @@ return {
             separator_at_end = false,
             -- preset = 'slanted',
             -- buffer_number = true,
-            -- modified = {button = '󰙏'}
-            modified = {button = '󱓻'}
+            modified = {button = '󰙏'}
+            -- modified = {button = '󱓻'},
         },
         tabpages = true,
         maximum_padding = 1,
