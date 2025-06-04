@@ -10,6 +10,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- barbar.nvim 색상
 vim.api.nvim_create_autocmd("Colorscheme", {
     group = vim.api.nvim_create_augroup('config_custom_highlights', {}),
     callback = function()
@@ -52,51 +53,51 @@ local function highlight(statement)
     end
 end
 
--- ColorScheme 이벤트에 따라 하이라이트 설정
+-- Melange.nvim 색상
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
         -- Treesitter 기반 하이라이팅 그룹 커스터마이징
         highlight({
             -- ["@function"] = { fg = get_default_fg("@function"), bold = true, italic = false },
-            ["@function"] = { fg = '#ffffff', bold = true, italic = false },
-            ["@function.call"] = { fg = get_default_fg("@variable"), bold = true, italic = false },
-            ["@keyword"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
-            ["@keyword.conditional"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
-            ["@keyword.repeat"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
-            ["@keyword.function"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
-            ["@keyword.import"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
-            ["@string"] = { fg = get_default_fg("@string"), italic = false },
-            ["@string.documentation"] = { fg = get_default_fg("@string.special"), italic = false },
-            ["@string.escape"] = { fg = "#d3d7ed", italic = false },
-            ["@character"] = { fg = get_default_fg("@keyword.directive"), italic = false },
-            ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
-            -- ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true },
-            ["@type.builtin"] = { fg = "#ebc06d", bold = true },
+            ["@function"]               = { fg = '#ffffff', bold = true, italic = false },
+            ["@function.call"]          = { fg = get_default_fg("@variable"), bold = true, italic = false },
+            ["@keyword"]                = { fg = get_default_fg("@keyword"), bold = true, italic = false },
+            ["@keyword.conditional"]    = { fg = get_default_fg("@keyword"), italic = true, bold = true },
+            ["@keyword.repeat"]         = { fg = get_default_fg("@keyword"), bold = true, italic = true, },
+            ["@keyword.function"]       = { fg = get_default_fg("@keyword.function"), bold = true, italic = true, },
+            ["@keyword.import"]         = { fg = get_default_fg("@keyword.function"), bold = true, italic = true, },
+            ["@string"]                 = { fg = get_default_fg("@string"), italic = false },
+            ["@string.documentation"]   = { fg = get_default_fg("@string.special"), italic = false },
+            ["@string.escape"]          = { fg = "#d3d7ed", italic = false },
+            ["@character"]              = { fg = get_default_fg("@keyword.directive"), italic = false },
+            ["@comment"]                = { fg = get_default_fg("@comment"), italic = false },
+            -- ["@type.builtin"]           = { fg = get_default_fg("@type"), bold = true },
+            ["@type.builtin"]           = { fg = "#ebc06d", bold = true },
 
             ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
             ["@punctuation.bracket"] = { fg = get_default_fg("@variable"), bold = false },
 
-            ["@markup.strong"] = { fg = "#ffffff", bold = true },
-            ["@markup.italic"] = { fg = "#ffffff", italic = true, bold = false},
-            ["@markup.heading.1"] = { fg = "#d47766", bold = true , underline = true, sp = "#d47766" },
-            ["@markup.heading.2"] = { fg = "#e49b5d", bold = true , underline = true, sp = "#e49b5d" },
-            ["@markup.heading.3"] = { fg = "#ebc06d", bold = true , underline = true, sp = "#ebc06d" },
-            ["@markup.heading.4"] = { fg = "#85b695", bold = true , underline = true, sp = "#85b695" },
-            ["@markup.heading.5"] = { fg = "#78997a", bold = false, underline = true, sp = "#78997a"  },
-            ["@markup.heading.6"] = { fg = "#a3a9ce", bold = false, underline = true, sp = "#a3a9ce"  },
+            ["@markup.strong"]          = { fg = "#ffffff", bold = true },
+            ["@markup.italic"]          = { fg = "#ffffff", italic = true, bold = false},
+            ["@markup.heading.1"]       = { fg = "#d47766", bold = true , underline = true, sp = "#d47766" },
+            ["@markup.heading.2"]       = { fg = "#e49b5d", bold = true , underline = true, sp = "#e49b5d" },
+            ["@markup.heading.3"]       = { fg = "#ebc06d", bold = true , underline = true, sp = "#ebc06d" },
+            ["@markup.heading.4"]       = { fg = "#85b695", bold = true , underline = true, sp = "#85b695" },
+            ["@markup.heading.5"]       = { fg = "#78997a", bold = false, underline = true, sp = "#78997a"  },
+            ["@markup.heading.6"]       = { fg = "#a3a9ce", bold = false, underline = true, sp = "#a3a9ce"  },
         })
 
         -- LSP 기반 하이라이팅 그룹 커스터마이징
         highlight({
             -- ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
-            ["@lsp.type.class"] = { fg = "#d47766", bold = true },
-            ["@lsp.mod.globalscope"] = { italic = false },
-            ["@lsp.type.parameter"] = { fg = get_default_fg("@variable"), italic = false, underline = true },
-            ["@lsp.type.function"] = { fg = get_default_fg("@variable"), italic = false },
-            ["@lsp.type.method"] = { fg = get_default_fg("@variable"), italic = false },
-            ["@lsp.mod.declaration"] = { fg = "#ffffff", italic = false },
-            ["@lsp.mod.definition"] = { fg = "#ffffff", italic = false },
+            ["@lsp.type.class"]         = { fg = "#d47766", bold = true },
+            ["@lsp.mod.globalscope"]    = { italic = false },
+            ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
+            ["@lsp.type.function"]      = { fg = get_default_fg("@variable"), italic = false },
+            ["@lsp.type.method"]        = { fg = get_default_fg("@variable"), italic = false },
+            ["@lsp.mod.declaration"]    = { fg = "#ffffff", italic = false },
+            ["@lsp.mod.definition"]     = { fg = "#ffffff", italic = false },
             ["@lsp.type.namespace.cpp"] = { fg = "#ffffff", italic = false, bold = true },
         })
 
