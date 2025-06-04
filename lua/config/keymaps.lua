@@ -48,7 +48,7 @@ mapKey('<leader>w', [[:ToggleWrapMode<CR>:nohlsearch<CR>]])
 -- Clear all inappropriate carriage return
 mapKey('<leader>M', [[:%s/\r//g<CR>]])
 -- Clear all inappropriate indent
-mapKey('<leader>I', 'ggVG=')
+mapKey('<leader>I', 'gg=G')
 -- Clear all trailing space
 mapKey('<leader>T', [[:%s/\s\+$//e<CR>:nohlsearch<CR>]])
 
