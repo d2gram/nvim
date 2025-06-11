@@ -75,8 +75,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             -- ["@type.builtin"]           = { fg = get_default_fg("@type"), bold = true },
             ["@type.builtin"]           = { fg = "#ebc06d", bold = true },
 
-            ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
-            ["@punctuation.bracket"] = { fg = get_default_fg("@variable"), bold = false },
+            ["@type.python"]            = { fg = get_default_fg("@operator"), bold = true },
+            ["@type.cpp"]               = { fg = "#85b695", bold = true },
+            ["@punctuation.bracket"]    = { fg = get_default_fg("@variable"), bold = false },
 
             ["@markup.strong"]          = { fg = "#ffffff", bold = true },
             ["@markup.italic"]          = { fg = "#ffffff", italic = true, bold = false},
