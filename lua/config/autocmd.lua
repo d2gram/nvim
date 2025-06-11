@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- barbar.nvim 색상
-vim.api.nvim_create_autocmd("Colorscheme", {
+vim.api.nvim_create_autocmd("ColorScheme", {
     group = vim.api.nvim_create_augroup('config_custom_highlights', {}),
     callback = function()
         vim.api.nvim_set_hl(0, 'BufferCurrent', { bg = "#292522", bold = true})
