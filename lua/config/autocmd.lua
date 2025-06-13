@@ -75,8 +75,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             -- ["@type.builtin"]           = { fg = get_default_fg("@type"), bold = true },
             ["@type.builtin"]           = { fg = "#ebc06d", bold = true },
 
-            ["Comment"]                = { fg = get_default_fg("@comment"), italic = false },
-            ["String"]                = { fg = get_default_fg("@string"), italic = false },
+            ["Comment"]                 = { fg = get_default_fg("@comment"), italic = false },
+            ["String"]                  = { fg = get_default_fg("@string"), italic = false },
 
             ["@type.python"]            = { fg = get_default_fg("@operator"), bold = true },
             ["@type.cpp"]               = { fg = "#85b695", bold = true },
@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
         highlight({
             -- ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
             ["@lsp.type.class"]         = { fg = "#85b695", bold = true },
-            ["@lsp.type.namespace.cpp"] = { fg = "#85b695", italic = false, bold = true },
+            ["@lsp.type.namespace.cpp"] = { fg = "#ffffff", italic = false, bold = true },
             ["@lsp.mod.globalscope"]    = { italic = false },
             -- ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
             ["@lsp.type.parameter"]     = { fg = "#baafa5", italic = false },
