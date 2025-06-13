@@ -72,9 +72,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
             ["@string.escape"]          = { fg = "#d3d7ed", italic = false },
             ["@character"]              = { fg = get_default_fg("@keyword.directive"), italic = false },
             ["@comment"]                = { fg = get_default_fg("@comment"), italic = false },
-            ["Comment"]                = { fg = get_default_fg("@comment"), italic = false },
             -- ["@type.builtin"]           = { fg = get_default_fg("@type"), bold = true },
             ["@type.builtin"]           = { fg = "#ebc06d", bold = true },
+
+            ["Comment"]                = { fg = get_default_fg("@comment"), italic = false },
+            ["String"]                = { fg = get_default_fg("@string"), italic = false },
 
             ["@type.python"]            = { fg = get_default_fg("@operator"), bold = true },
             ["@type.cpp"]               = { fg = "#85b695", bold = true },
