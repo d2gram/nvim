@@ -26,24 +26,12 @@ mapKey('<leader>e', ':Neotree toggle<cr>')
 -- claer search highlight
 mapKey('<leader>h', ':nohlsearch<CR>')
 
--- terminal
--- DEPRECATED 
--- local toggleTerminal = require("utils.toggleTerminal")
--- mapKey('<leader>t',[[:lua require("utils.toggleTerminal").ToggleTerminal()<CR>]])
 mapKey('<leader>t', [[:ToggleTerm direction=horizontal size=15<CR>]])
 mapKey('<leader>y', [[:ToggleTerm direction=vertical size=60<CR>]])
 
--- delete all buffer except Neotree
--- local closeAll = require("utils.closeAll")
--- mapKey('<leader>bd', [[:lua require("utils.closeAll").closeAll()<CR>]])
 
--- DEPRECATED because of using barbar.nvim
-
--- local toggleCheckbox = require("utils.toggleCheckbox")
--- mapKey('<leader>x', [[:lua require("utils.toggleCheckbox").ToggleCheckbox()<CR>]])
 
 mapKey('<leader>O', [[:lua require('persistence').load({last = true}) <CR>]])
-          --"<cmd>lua require('persistence').load({ last = true }) <CR>"
 
 
 -- toggle line wrapping mode (soft <-> hard)
@@ -76,10 +64,6 @@ mapKey('<A-a>', [[:BufferPrevious<CR>]])
 mapKey('<A-d>', [[:BufferNext<CR>]])
 mapKey('<A-S-a>', [[:BufferMovePrevious<CR>]])
 mapKey('<A-S-d>', [[:BufferMoveNext<CR>]])
--- mapKey('<A-h>', [[:BufferPrevious<CR>]])
--- mapKey('<A-l>', [[:BufferNext<CR>]])
--- mapKey('<A-H>', [[:BufferMovePrevious<CR>]])
--- mapKey('<A-L>', [[:BufferMoveNext<CR>]])
 
 mapKey('<A-X>', [[:BufferCloseAllButCurrentOrPinned<CR>]])
 mapKey('<A-x>', [[:BufferClose<CR>]])
@@ -93,9 +77,6 @@ mapKey('<A-q>', [[:q<CR>]])
 mapKey('<A-s>', [[:vsplit<CR>]])
 mapKey('<A-S>', '<C-w>x') -- exchanging panes
 
--- Telescope.nvim (Search)
--- mapKey('<A-f>', [[:Telescope find_files<CR>]])
--- mapKey('<A-g>', [[:Telescope live_grep<CR>]])
 
 mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
 
