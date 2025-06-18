@@ -18,7 +18,7 @@ mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
 -------- LEADER KEYMAPPING --------
 --     ....      .    .  . . 
 -- abcdefghijklmnopqrstuvwxyz
---         .   . .    .      
+--         .   . .  . .      
 -- ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 -- Neotree
@@ -34,9 +34,9 @@ mapKey('<leader>y', [[:ToggleTerm direction=vertical size=60<CR>]])
 -- open recent file
 mapKey('<leader>O', [[:lua require('persistence').load({last = true}) <CR>]])
 
-
 -- toggle line wrapping mode (soft <-> hard)
 mapKey('<leader>w', [[:ToggleWrapMode<CR>:nohlsearch<CR>]])
+
 
 -- Clear all inappropriate carriage return
 mapKey('<leader>M', [[:%s/\r//g<CR>]])
@@ -44,6 +44,8 @@ mapKey('<leader>M', [[:%s/\r//g<CR>]])
 mapKey('<leader>I', 'gg=G')
 -- Clear all trailing space
 mapKey('<leader>T', [[:%s/\s\+$//e<CR>:nohlsearch<CR>]])
+-- Reload neovim configuration
+mapKey('<leader>R', [[:luafile ~/.config/nvim/init.lua<CR>]])
 
 
 -- dismiss noice popup
