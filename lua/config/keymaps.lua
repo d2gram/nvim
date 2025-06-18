@@ -97,6 +97,8 @@ mapKey('<A-S>', '<C-w>x') -- exchanging panes
 -- mapKey('<A-f>', [[:Telescope find_files<CR>]])
 -- mapKey('<A-g>', [[:Telescope live_grep<CR>]])
 
+mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
+
 
 -------- INSERT MODE --------
 -- Newline on insert mode
