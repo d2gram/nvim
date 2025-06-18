@@ -12,7 +12,8 @@ mapKey('<C-j>', '<C-w>j')
 mapKey('<C-k>', '<C-w>k')
 mapKey('<C-l>', '<C-w>l')
 
-
+-- see warning description
+mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
 
 -------- LEADER KEYMAPPING --------
 --     ....      .    .  . . 
@@ -26,11 +27,11 @@ mapKey('<leader>e', ':Neotree toggle<cr>')
 -- claer search highlight
 mapKey('<leader>h', ':nohlsearch<CR>')
 
+-- open terminal in... t(horizontal), y(vertical) way.
 mapKey('<leader>t', [[:ToggleTerm direction=horizontal size=15<CR>]])
 mapKey('<leader>y', [[:ToggleTerm direction=vertical size=60<CR>]])
 
-
-
+-- open recent file
 mapKey('<leader>O', [[:lua require('persistence').load({last = true}) <CR>]])
 
 
@@ -78,7 +79,6 @@ mapKey('<A-s>', [[:vsplit<CR>]])
 mapKey('<A-S>', '<C-w>x') -- exchanging panes
 
 
-mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
 
 
 -------- INSERT MODE --------
