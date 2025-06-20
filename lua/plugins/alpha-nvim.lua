@@ -25,9 +25,9 @@ return {
 
       -- Buttons Section
       dashboard_theme.section.buttons.val = {
+        dashboard_theme.button("Space e", " Neotree Toggle", "<cmd>Neotree toggle <CR>"),
         dashboard_theme.button("Alt + f", " Find file", "<cmd>Telescope find_files <CR>"),
         dashboard_theme.button("Alt + e", " Find text", "<cmd>Telescope live_grep <CR>"),
-        dashboard_theme.button("Space e", " Neotree Toggle", "<cmd>Neotree toggle <CR>"),
         dashboard_theme.button("Space o", " Recent files", "<cmd>Telescope oldfiles <CR>"),
         dashboard_theme.button( "Space O", " Load Last Session", "<cmd>lua require('persistence').load({ last = true }) <CR>"),
         -- dashboard_theme.button("n", " New file", "<cmd>ene <BAR> startinsert <CR>"),
