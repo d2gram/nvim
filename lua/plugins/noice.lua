@@ -1,9 +1,7 @@
 return {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-        -- add any options here
-    },
+    opts = { },
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim",
@@ -15,6 +13,10 @@ return {
     config = function()
         require("noice").setup({
             lsp = {
+                signature = {
+                    enabled = false,
+                    auto_open = { enabled = false },
+                },
                 override = {
                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                     ["vim.lsp.util.stylize_markdown"] = true,
