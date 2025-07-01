@@ -5,6 +5,8 @@ local mapKey = require("utils.keyMapper").mapKey
 -- logical HJKL navigation
 mapKey('j', 'gj')
 mapKey('k', 'gk')
+mapKey('H', '^', 'n', { noremap = false })
+mapKey('L', '$', 'n', { noremap = false })
 
 -- pane
 mapKey('<C-h>', '<C-w>h')
@@ -13,7 +15,7 @@ mapKey('<C-k>', '<C-w>k')
 mapKey('<C-l>', '<C-w>l')
 
 -- see warning description
-mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
+mapKey('<C-i>', [[:lua vim.diagnostic.open_float()<CR>]])
 
 -------- LEADER KEYMAPPING --------
 --     ....      .    .  . . 
