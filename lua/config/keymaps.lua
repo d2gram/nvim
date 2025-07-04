@@ -18,10 +18,15 @@ mapKey('<C-l>', '<C-w>l')
 mapKey('<C-i>', [[:lua vim.diagnostic.open_float()<CR>]])
 
 -------- LEADER KEYMAPPING --------
---     ....      .    .  . . 
+--    .. ..      .    .  . . 
 -- abcdefghijklmnopqrstuvwxyz
 --         .   . .  . .      
 -- ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+-- 여기에 정의되지 않은 leader 키맵
+-- d: (lsp) 정의로 점프
+-- g: (lazygit) open lazygit
+-- o: (telescope) open 'recent' float window
 
 -- Neotree
 mapKey('<leader>e', ':Neotree toggle<cr>')
@@ -56,13 +61,13 @@ mapKey('<leader>[', function()
 end)
 
 ------------ ALT -------------
+-- 여기에 정의되지 않은 ALT 키맵
+-- Alt + f: (fzf) find-files
+-- Alt + g: (fzf) live-grep
+
 -- Newline while not enter the insert mode
 mapKey('<A-o>', 'o<ESC>')
 mapKey('<A-O>', 'O<Esc>')
-
--- Row exchange
--- mapKey('<A-S-j>', [[:m .+1<CR>==]])
--- mapKey('<A-S-k>', [[:m .-2<CR>==]])
 
 -- Tab operation
 mapKey('<A-a>', [[:BufferPrevious<CR>]])
