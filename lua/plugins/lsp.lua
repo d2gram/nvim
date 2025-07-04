@@ -55,9 +55,9 @@ return {
                 },
             })
 
-            keyMapper('K', function()
-                require('lsp_signature').toggle_float_win()
-            end)
+            -- keyMapper('K', function()
+            --     require('lsp_signature').toggle_float_win()
+            -- end)
             keyMapper('gd', vim.lsp.buf.definition)
             keyMapper('<leader>ca', vim.lsp.buf.code_action)
         end
