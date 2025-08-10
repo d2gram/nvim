@@ -57,6 +57,9 @@ end
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
+        -- vim.api.nvim_set_hl(0, "Normal",      { bg = "#282828" })
+        -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#333333" })       
+
         -- Treesitter 기반 하이라이팅 그룹 커스터마이징
         highlight({
             -- ["@function"] = { fg = get_default_fg("@function"), bold = true, italic = false },

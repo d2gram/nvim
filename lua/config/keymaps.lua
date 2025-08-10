@@ -5,6 +5,13 @@ local mapKey = require("utils.keyMapper").mapKey
 -- logical HJKL navigation
 mapKey('j', 'gj')
 mapKey('k', 'gk')
+mapKey('H', '^', 'n', { noremap = false })
+mapKey('L', '$', 'n', { noremap = false })
+mapKey('M', function()
+    require("menu").open("default")
+    end,
+    'n', { noremap = false }
+)
 
 -- pane
 mapKey('<C-h>', '<C-w>h')
@@ -13,13 +20,18 @@ mapKey('<C-k>', '<C-w>k')
 mapKey('<C-l>', '<C-w>l')
 
 -- see warning description
-mapKey('H', [[:lua vim.diagnostic.open_float()<CR>]])
+mapKey('<C-i>', [[:lua vim.diagnostic.open_float()<CR>]])
 
 -------- LEADER KEYMAPPING --------
---     ....      .    .  . . 
+--    .. ..      .    .  . .
 -- abcdefghijklmnopqrstuvwxyz
---         .   . .  . .      
+--         .   . .  . .
 -- ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+-- 여기에 정의되지 않은 leader 키맵
+-- d: (lsp) 정의로 점프
+-- g: (lazygit) open lazygit
+-- o: (telescope) open 'recent' float window
 
 -- Neotree
 mapKey('<leader>e', ':Neotree toggle<cr>')
@@ -54,13 +66,13 @@ mapKey('<leader>[', function()
 end)
 
 ------------ ALT -------------
+-- 여기에 정의되지 않은 ALT 키맵
+-- Alt + f: (fzf) find-files
+-- Alt + g: (fzf) live-grep
+
 -- Newline while not enter the insert mode
 mapKey('<A-o>', 'o<ESC>')
 mapKey('<A-O>', 'O<Esc>')
-
--- Row exchange
--- mapKey('<A-S-j>', [[:m .+1<CR>==]])
--- mapKey('<A-S-k>', [[:m .-2<CR>==]])
 
 -- Tab operation
 mapKey('<A-a>', [[:BufferPrevious<CR>]])
@@ -97,6 +109,6 @@ mapKey('<C-l>', '<Right>', 'i')
 
 
 -------- TERMINAL MODE --------
--- get out from terminal mode 
+-- get out from terminal mode
 mapKey('<C-q>', [[<C-\><C-n>]], 't')
 mapKey('<Esc>', [[<C-\><C-n>]], 't')
