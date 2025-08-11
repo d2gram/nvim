@@ -7,11 +7,7 @@ mapKey('j', 'gj')
 mapKey('k', 'gk')
 mapKey('H', '^', 'n', { noremap = false })
 mapKey('L', '$', 'n', { noremap = false })
-mapKey('M', function()
-    require("menu").open("default")
-    end,
-    'n', { noremap = false }
-)
+mapKey('M', function() require("menu").open("default") end, 'n', { noremap = false })
 
 -- pane
 mapKey('<C-h>', '<C-w>h')
