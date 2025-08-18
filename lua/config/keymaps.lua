@@ -21,7 +21,7 @@ mapKey('<C-i>', [[:lua vim.diagnostic.open_float()<CR>]])
 -------- LEADER KEYMAPPING --------
 --    .. ..      .    .  . .
 -- abcdefghijklmnopqrstuvwxyz
---         .   . .  . .
+--             . .  . .
 -- ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 -- 여기에 정의되지 않은 leader 키맵
@@ -49,7 +49,7 @@ mapKey('<leader>w', [[:ToggleWrapMode<CR>:nohlsearch<CR>]])
 -- Clear all inappropriate carriage return
 mapKey('<leader>M', [[:%s/\r//g<CR>]])
 -- Clear all inappropriate indent
-mapKey('<leader>I', 'gg=G')
+mapKey('<leader>=', 'gg=G') -- '<leader> =', for who use liguature font
 -- Clear all trailing space
 mapKey('<leader>T', [[:%s/\s\+$//e<CR>:nohlsearch<CR>]])
 -- Reload neovim configuration
