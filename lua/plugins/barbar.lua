@@ -1,27 +1,27 @@
 return {
-    'romgrk/barbar.nvim',
-    dependencies = {
-        'lewis6991/gitsigns.nvim',
-        'nvim-tree/nvim-web-devicons',
+  'romgrk/barbar.nvim',
+  dependencies = {
+    'lewis6991/gitsigns.nvim',
+    'nvim-tree/nvim-web-devicons',
+  },
+  init = function() vim.g.barbar_auto_setup = false end,
+  opts = {
+    -- sidebar_filetypes = {
+    --     ['neo-tree'] = {event = 'BufWipeOut'},
+    -- },
+    no_name_title = "Empty",
+    icons = {
+      -- separator = {left = "", right = ""},
+      separator_at_end = false,
+      -- preset = 'slanted',
+      -- buffer_number = true,
+      modified = {button = '󰙏'}
+      -- modified = {button = '󱓻'},
     },
-    init = function() vim.g.barbar_auto_setup = false end,
-    opts = {
-        -- sidebar_filetypes = {
-        --     ['neo-tree'] = {event = 'BufWipeOut'},
-        -- },
-        no_name_title = "Empty",
-        icons = {
-            -- separator = {left = "", right = ""},
-            separator_at_end = false,
-            -- preset = 'slanted',
-            -- buffer_number = true,
-            modified = {button = '󰙏'}
-            -- modified = {button = '󱓻'},
-        },
-        tabpages = true,
-        maximum_padding = 1,
-        minimum_padding = 1,
-    },
+    tabpages = true,
+    maximum_padding = 1,
+    minimum_padding = 1,
+  },
 }
 
 -- return {

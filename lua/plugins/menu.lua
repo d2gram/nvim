@@ -1,4 +1,4 @@
 return {
-    { "nvzone/volt", lazy = true },
-    { "nvzone/menu", lazy = true },
+  { "nvzone/volt", lazy = true },
+  { "nvzone/menu", lazy = true },
 }

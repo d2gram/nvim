@@ -1,67 +1,67 @@
 return {
-    "savq/melange-nvim",
-    lazy = false,
-    priority = 1000,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-    },
-    config = function()
-        vim.cmd([[colorscheme melange]])
+  "savq/melange-nvim",
+  lazy = false,
+  priority = 1000,
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+  },
+  config = function()
+    vim.cmd([[colorscheme melange]])
 
-        -- local function get_default_fg(group)
-        --   local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
-        --   return hl and hl.fg or nil  -- fg 값 반환
-        -- end
-        --
-        -- -- 사용자 정의 네임스페이스 설정
-        -- local namespace = vim.api.nvim_create_namespace("custom_theme")
-        -- local set_namespace = vim.api.nvim_set_hl_ns or vim.api.nvim__set_hl_ns
-        --
-        -- -- 하이라이팅 설정 함수
-        -- local function highlight(statement)
-        --   for group, settings in pairs(statement) do
-        --     vim.api.nvim_set_hl(namespace, group, settings)
-        --   end
-        -- end
-        --
-        -- -- Treesitter 기반 하이라이팅 그룹 커스터마이징
-        -- highlight({
-        --     ["@function"] = { fg = get_default_fg("@function"), bold = true, italic = false },
-        --     ["@function.call"] = { fg = '#ffffff', bold = true, italic = false },
-        --     ["@keyword"] = { fg =get_default_fg("@keyword"), italic = true, bold = true },
-        --     ["@keyword.conditional"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
-        --     ["@keyword.repeat"] = { fg = get_default_fg("@keyword"), italic = true, bold = true }   ,
-        --     ["@keyword.function"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
-        --     ["@keyword.import"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
-        --
-        --     ["@string"] = {fg = get_default_fg("@string"), italic = false },
-        --     ["@string.documentation"] = { fg = get_default_fg("@string.special"), italic = false},
-        --     ["@string.escape"] = { fg = "#d3d7ed", italic = false },
-        --     ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
-        --
-        --     ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true},
-        --     ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
-        --
-        --     ["@markup.strong"] = { fg = "#ffffff", bold = true },
-        --     ["@markup.italic"] = { fg = "#ffffff", italic = true },
-        --     ["@markup.heading"] = { fg = get_default_fg("@markup.heading"), bold = true },
-        -- })
-        --
-        -- -- LSP 기반 하이라이팅 그룹 커스터마이징
-        -- highlight({
-        --     ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
-        --     ["@lsp.mod.globalscope"] = { italic = false },
-        --     ["@lsp.type.parameter"] = { fg = get_default_fg("@variable"), italic = false },
-        -- })
-        --
-        -- highlight({
-        --     ["Whitespace"] = { fg = "#403a36" },
-        -- })
-        --
-        --    -- 네임스페이스 적용
-        --    set_namespace(namespace)       -- highlight('@string', { fg = '#253333',  italic = false })
+    -- local function get_default_fg(group)
+    --   local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+    --   return hl and hl.fg or nil  -- fg 값 반환
+    -- end
+    --
+    -- -- 사용자 정의 네임스페이스 설정
+    -- local namespace = vim.api.nvim_create_namespace("custom_theme")
+    -- local set_namespace = vim.api.nvim_set_hl_ns or vim.api.nvim__set_hl_ns
+    --
+    -- -- 하이라이팅 설정 함수
+    -- local function highlight(statement)
+    --   for group, settings in pairs(statement) do
+    --     vim.api.nvim_set_hl(namespace, group, settings)
+    --   end
+    -- end
+    --
+    -- -- Treesitter 기반 하이라이팅 그룹 커스터마이징
+    -- highlight({
+    --     ["@function"] = { fg = get_default_fg("@function"), bold = true, italic = false },
+    --     ["@function.call"] = { fg = '#ffffff', bold = true, italic = false },
+    --     ["@keyword"] = { fg =get_default_fg("@keyword"), italic = true, bold = true },
+    --     ["@keyword.conditional"] = { fg = get_default_fg("@keyword"), italic = true, bold = true },
+    --     ["@keyword.repeat"] = { fg = get_default_fg("@keyword"), italic = true, bold = true }   ,
+    --     ["@keyword.function"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
+    --     ["@keyword.import"] = { fg = get_default_fg("@keyword.function"), italic = true, bold = true },
+    --
+    --     ["@string"] = {fg = get_default_fg("@string"), italic = false },
+    --     ["@string.documentation"] = { fg = get_default_fg("@string.special"), italic = false},
+    --     ["@string.escape"] = { fg = "#d3d7ed", italic = false },
+    --     ["@comment"] = { fg = get_default_fg("@comment"), italic = false },
+    --
+    --     ["@type.builtin"] = { fg = get_default_fg("@type"), bold = true},
+    --     ["@type.python"] = { fg = get_default_fg("@operator"), bold = true },
+    --
+    --     ["@markup.strong"] = { fg = "#ffffff", bold = true },
+    --     ["@markup.italic"] = { fg = "#ffffff", italic = true },
+    --     ["@markup.heading"] = { fg = get_default_fg("@markup.heading"), bold = true },
+    -- })
+    --
+    -- -- LSP 기반 하이라이팅 그룹 커스터마이징
+    -- highlight({
+    --     ["@lsp.type.class"] = { fg = get_default_fg("@lsp.type.class"), bold = true },
+    --     ["@lsp.mod.globalscope"] = { italic = false },
+    --     ["@lsp.type.parameter"] = { fg = get_default_fg("@variable"), italic = false },
+    -- })
+    --
+    -- highlight({
+    --     ["Whitespace"] = { fg = "#403a36" },
+    -- })
+    --
+    --    -- 네임스페이스 적용
+    --    set_namespace(namespace)       -- highlight('@string', { fg = '#253333',  italic = false })
 
-    end,
+  end,
 }
 
 -- return {

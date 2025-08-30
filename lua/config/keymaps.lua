@@ -58,7 +58,7 @@ mapKey('<leader>R', [[:luafile ~/.config/nvim/init.lua<CR>]])
 
 -- dismiss noice popup
 mapKey('<leader>[', function()
-    require('notify').dismiss({ silent = true, enter = false, })
+  require('notify').dismiss({ silent = true, enter = false, })
 end)
 
 ------------ ALT -------------

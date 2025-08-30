@@ -76,12 +76,12 @@ return {
 
           -- Footer
           dashboard_theme.section.footer.val = "⚡ Neovim loaded "
-            .. stats.loaded
-            .. "/"
-            .. stats.count
-            .. " plugins in "
-            .. ms
-            .. "ms"
+          .. stats.loaded
+          .. "/"
+          .. stats.count
+          .. " plugins in "
+          .. ms
+          .. "ms"
           pcall(vim.cmd.AlphaRedraw)
           dashboard_theme.section.footer.opts.hl = "AlphaFooter"
         end,
