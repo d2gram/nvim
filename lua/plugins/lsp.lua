@@ -11,9 +11,9 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          "lua_ls",
+          -- "lua_ls",
           "ts_ls",
-          "clangd",
+          -- "clangd",
           "omnisharp",
           "pyright",
         }
@@ -25,7 +25,18 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
 
-      lspconfig.ts_ls.setup({ })
+      lspconfig.ts_ls.setup({ 
+        settings = {
+          lua = {
+            runtime = {
+              version = 'LuaJIT',
+            },
+            diagnostics = {
+              globals = { 'vim' },
+            },
+          },
+        },
+      })
       lspconfig.clangd.setup({ 
         cmd = {
           "clangd",
