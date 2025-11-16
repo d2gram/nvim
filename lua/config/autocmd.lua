@@ -133,3 +133,9 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     })
   end,
 })
+
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = { '*.cpp', '*.c' }, -- .cpp 또는 .c 파일일 때
+  command = '0r ~/online-judge/.templates/cpp_main.cpp',
+})
+
