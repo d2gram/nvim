@@ -134,8 +134,21 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
+-- 파일 형식에 따라 makeprg를 동적으로 설정
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'c',
+  command = [[setlocal makeprg=gcc\ %o\ -o\ %<]],
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'cpp',
+  command = [[setlocal makeprg=g++\ %o\ -o\ %<]],
+})
+
+
+
 vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = { '*.cpp', '*.c' }, -- .cpp 또는 .c 파일일 때
-  command = '0r ~/online-judge/.templates/cpp_main.cpp',
+  command = [[0r ~/_code/online-judge/.templates/cpp_main.cpp]],
 })
 
