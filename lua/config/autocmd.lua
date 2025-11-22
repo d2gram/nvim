@@ -147,8 +147,8 @@ vim.api.nvim_create_autocmd('FileType', {
 
 
 
-vim.api.nvim_create_autocmd('BufNewFile', {
-  pattern = { '*.cpp', '*.c' }, -- .cpp 또는 .c 파일일 때
-  command = [[0r ~/_code/online-judge/.templates/cpp_main.cpp]],
-})
-
+-- vim.api.nvim_create_autocmd('BufNewFile', {
+--   pattern = { '*.cpp', '*.c' }, -- .cpp 또는 .c 파일일 때
+--   command = [[0r ~/_code/online-judge/.templates/cpp_main.cpp]],
+-- })
+--
