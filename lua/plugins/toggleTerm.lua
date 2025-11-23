@@ -1,7 +1,9 @@
 return {
   'akinsho/toggleterm.nvim',
   version = '*',
-  opts = {
-
-  },
+  config = function()
+    require("toggleterm").setup({
+      shell = "/usr/bin/zsh",
+    })
+  end
 }

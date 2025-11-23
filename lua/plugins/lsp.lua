@@ -11,11 +11,12 @@ return {
     config = function()
       require('mason-lspconfig').setup({
         ensure_installed = {
-          -- "lua_ls",
+          "lua_ls",
           "ts_ls",
           -- "clangd",
-          "omnisharp",
+          -- "omnisharp",
           "pyright",
+          -- "csharp-language-server@0.15.0",
         }
       })
     end
@@ -44,16 +45,16 @@ return {
         },
       })
       lspconfig.pyright.setup({ })
-      lspconfig.omnisharp.setup({
-        on_attach = function(client, bufnr)
-          client.server_capabilities.documentFormattingProvider = true
-        end,
-        settings = {
-          formattingOptions = {
-            Bracestyle = "Allman",
-          }
-        }
-      })
+      -- lspconfig.omnisharp.setup({
+      --   on_attach = function(client, bufnr)
+      --     client.server_capabilities.documentFormattingProvider = true
+      --   end,
+      --   settings = {
+      --     formattingOptions = {
+      --       Bracestyle = "Allman",
+      --     }
+      --   }
+      -- })
       lspconfig.lua_ls.setup({
         settings = {
           Lua = {
@@ -69,6 +70,9 @@ return {
             },
           },
         },
+      })
+      lspconfig.csharp_ls.setup({
+        cmd={ "csharp_ls" }
       })
 
       -- keyMapper('K', function()

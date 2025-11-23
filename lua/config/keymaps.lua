@@ -33,7 +33,8 @@ mapKey('<C-i>', [[:lua vim.diagnostic.open_float()<CR>]])
 mapKey('<leader>e', ':Neotree toggle<cr>')
 
 -- claer search highlight
-mapKey('<leader>h', ':nohlsearch<CR>')
+mapKey('<leader>H', ':nohlsearch<CR>')
+mapKey('<leader>h', [[:lua vim.diagnostic.open_float()]])
 
 -- open terminal in... t(horizontal), y(vertical) way.
 mapKey('<leader>t', [[:ToggleTerm direction=horizontal size=15<CR>]])
