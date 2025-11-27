@@ -105,7 +105,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
       ["@lsp.typemod.globalscope"]    = { italic = false },
       -- ["@lsp.type.parameter"]     = { fg = get_default_fg("@variable"), italic = false, underline = true },
       ["@lsp.type.parameter"]     = { fg = "#baafa5", italic = false },
-      ["@lsp.type.property"]     = { fg = get_default_fg("@lsp.type.property"), italic = true },
+      ["@lsp.type.property"]     = { fg = get_default_fg("@lsp.type.property"), italic = false },
       ["@lsp.type.function"]      = { fg = get_default_fg("@variable"), italic = false },
       ["@lsp.type.method"]        = { fg = get_default_fg("@variable"), italic = false },
       ["@lsp.mod.definition"]     = { fg = "#ffffff", italic = false },
