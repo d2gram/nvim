@@ -17,6 +17,7 @@ return {
           -- "omnisharp",
           "pyright",
           -- "csharp-language-server@0.15.0",
+          "rust-analyzer",
         }
       })
     end
