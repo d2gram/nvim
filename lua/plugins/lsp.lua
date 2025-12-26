@@ -18,7 +18,6 @@ return {
           "pyright",
           -- "csharp-language-server@0.15.0",
           "rust_analyzer",
-          "hls",
         }
       })
     end
