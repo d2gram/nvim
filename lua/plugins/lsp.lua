@@ -68,7 +68,7 @@ return {
               checkThirdParty = false,
             },
             telemetry = {
-              enable = false,
+              enable = true,
             },
           },
         },
