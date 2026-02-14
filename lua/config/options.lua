@@ -33,4 +33,4 @@ opt.showtabline = 2
 
 opt.fileformat = "unix"
 
-opt.clipboard = 'unnamedplus'
+opt.clipboard = ''
